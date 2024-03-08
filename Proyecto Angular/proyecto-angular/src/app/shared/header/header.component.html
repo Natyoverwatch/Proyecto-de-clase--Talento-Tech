@@ -1,0 +1,17 @@
+<header>
+  <div>
+    <img src="../../../assets/images/logo.png" alt="" width="50rem" />
+  </div>
+  <nav>
+    <ul>
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="aboutMe">About</a></li>
+      <li><a routerLink="services">Service</a></li>
+      <li><a routerLink="contact">Contact</a></li>
+      <li><a routerLink="clients">Clients</a></li>
+    </ul>
+  </nav>
+</header>
+
+<app-contador (incrementarValor)="recibirContador($event)"></app-contador>
+Este es el valor = {{ contador }}
