@@ -64,6 +64,7 @@ export class AgregarClientesComponent {
       this.clienteService.crearClientes(data).subscribe({
         next: (resp: any) => {
           console.log('Usuario Creado', resp);
+          this.datoFormClient.reset();
         },
         error: (error: any) => {
           console.log('Error al crear el cliente', error);

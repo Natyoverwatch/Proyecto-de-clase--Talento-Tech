@@ -9,13 +9,15 @@ import {
 import { AgregarClientesComponent } from '../agregar-clientes/agregar-clientes.component';
 import { ClientesService } from '../../../services/clientes/clientes.service';
 import { Router } from '@angular/router';
+import { ROUTER_APP } from '../../../core/enum/router-app.enum';
+import { PermisosDirective } from '../../../core/directives/permisos/permisos.directive';
 
 @Component({
   selector: 'app-ver-clientes',
   standalone: true,
   templateUrl: './ver-clientes.component.html',
   styleUrl: './ver-clientes.component.css',
-  imports: [AgregarClientesComponent],
+  imports: [AgregarClientesComponent, PermisosDirective],
 })
 export class VerClientesComponent implements OnInit {
   misClientes: Cliente[] = [];
@@ -77,7 +79,7 @@ export class VerClientesComponent implements OnInit {
   }
 
   agregarClientes() {
-    this.router.navigateByUrl('add-clientes');
+    this.router.navigateByUrl(ROUTER_APP.ADD_CLIENTES);
   }
 
   eliminarCliente(idCliente: number): void {
